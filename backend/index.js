@@ -28,7 +28,7 @@ app.use('/todos', authMiddleWare, todosRoutes);
 connnectToDb()
 
 //where our backend will run
-const PORT = process.env.PORT || 7000;
+const PORT =  7000;
 app.listen(PORT, ()=>{
     console.log(`Connected at ${PORT}`)
 })
