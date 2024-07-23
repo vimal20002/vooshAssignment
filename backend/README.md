@@ -18,8 +18,8 @@ This is a backend application built with Express.js, running on port 7000. The a
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
+   git clone https://github.com/vimal20002/vooshAssignment.git
+   cd vooshAssignment
    ```
 
 2. Install dependencies:
@@ -31,7 +31,7 @@ This is a backend application built with Express.js, running on port 7000. The a
 
 1. Start the server with nodemon:
    ```bash
-   npm run dev
+   nodemon
    ```
 
    The server will start on `http://localhost:7000`.
