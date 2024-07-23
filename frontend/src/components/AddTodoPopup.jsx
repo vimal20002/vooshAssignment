@@ -15,14 +15,11 @@ const AddTodoPopup = ({ isOpen, onClose }) => {
   const dispatch = useDispatch()
 
   useEffect(()=>{
-    //on change of todo , sets the todo array
     setFormData({
         title: todo?.title,
         description: todo?.description
       });
   }, [todo])
-
-  //handles the input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -31,8 +28,6 @@ const AddTodoPopup = ({ isOpen, onClose }) => {
     });
   };
 const navigate = useNavigate()
-
-// handles the submission of todo
   const handleSubmit = (e) => {
     e.preventDefault();
     if(todo)
@@ -58,7 +53,6 @@ const navigate = useNavigate()
     }
   };
 
-  //helps in removing the popups
   const handleClickOutside = (e) => {
     if (popupRef.current && !popupRef.current.contains(e.target)) {
       onClose();

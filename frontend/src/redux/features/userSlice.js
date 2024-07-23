@@ -1,9 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from '../api'
 
-
-// for login
-
 export const loginThunk=createAsyncThunk("/login",async({formData, navigate, dispatch},{rejectWithValue})=>{
     try {
         const response=await api.login(formData);
@@ -26,7 +23,7 @@ export const loginThunk=createAsyncThunk("/login",async({formData, navigate, dis
         return rejectWithValue(error.response?.data)
     }
 })
-//for registration
+
 export const registerThunk=createAsyncThunk("/register",async({formData, navigate,dispatch},{rejectWithValue})=>{
     try {
         const response=await api.register(formData);
@@ -48,7 +45,6 @@ export const registerThunk=createAsyncThunk("/register",async({formData, navigat
         return rejectWithValue(error.response?.data)
     }
 })
-//for googlginthunk
 export const googleThunk=createAsyncThunk("/google",async({formData, navigate,dispatch},{rejectWithValue})=>{
     try {
         const response=await api.continuwWithGoogleApi(formData);
@@ -80,12 +76,11 @@ export const googleThunk=createAsyncThunk("/google",async({formData, navigate,di
         return rejectWithValue(error.response?.data)
     }
 })
-//resets the error value to null
+
 export const resetErrorThunk = createAsyncThunk('user/resetError', async (_, { dispatch }) => {
     dispatch(userSlice.actions.resetError());
 });
 
-//resets the response from registration
 export const resetRegThunk = createAsyncThunk('user/resetReg', async (_, { dispatch }) => {
     dispatch(userSlice.actions.resetReg());
 });
@@ -103,7 +98,6 @@ const userSlice = createSlice({
         registration:null
     },
     reducers: {
-        //related reducers
         resetError: (state) => {
             state.error = null;
         },
@@ -163,7 +157,6 @@ const userSlice = createSlice({
             state.loading = true;
             state.error = '';
         })
-        //for google login
         .addCase(googleThunk.fulfilled, (state, action) => {
             state.loading = false;
             if(action.payload.token!==null){

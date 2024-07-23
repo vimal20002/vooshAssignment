@@ -19,7 +19,6 @@ const SignupForm = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-  //handles the input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -28,7 +27,7 @@ const SignupForm = () => {
     });
   };
 
-//handles the form submission
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if(formData.email==="" || formData.password==="" || formData.confirmPassword==="")
