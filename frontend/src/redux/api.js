@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API=axios.create({baseURL: 'https://vooshassignment.onrender.com'});
+const API=axios.create({baseURL: 'https://vooshassignment.onrender.com:7000'});
 
 export const register=(formData)=>{
     return API.post('/auth/signup',formData);
