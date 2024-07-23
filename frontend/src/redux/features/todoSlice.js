@@ -1,7 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import * as api from '../api'
 
-//gets you all the todos
 export const getTodoThunk=createAsyncThunk("/getTodo", async({formData},{rejectWithValue})=>{
      try {
         console.log("started fetching blogs");
@@ -15,7 +14,7 @@ export const getTodoThunk=createAsyncThunk("/getTodo", async({formData},{rejectW
      }
 })
 
-//adds a new to do
+
 export const addTodoThunk=createAsyncThunk("/addTodo", async({formData, onClose, dispatch},{rejectWithValue})=>{
     try {
        const response= await api.addTodoApi(formData);
@@ -30,8 +29,6 @@ export const addTodoThunk=createAsyncThunk("/addTodo", async({formData, onClose,
        return rejectWithValue(error.response?.data)
     }
 })
-
-//gets all todos
 export const getAllTodosThunk=createAsyncThunk("/getalltodos", async({dispatch},{rejectWithValue})=>{
     try {
        const response= await api.getTodosApi();
@@ -44,8 +41,6 @@ export const getAllTodosThunk=createAsyncThunk("/getalltodos", async({dispatch},
        return rejectWithValue(error.response?.data)
     }
 })
-
-//updates the todos
 export const updateTodoThunk=createAsyncThunk("/updatetodo", async({formData,navigate,dispatch},{rejectWithValue})=>{
     try {
        const response= await api.updateTodoApi(formData);
@@ -61,8 +56,6 @@ export const updateTodoThunk=createAsyncThunk("/updatetodo", async({formData,nav
        return rejectWithValue(error.response?.data)
     }
 })
-
-//deletes a todo
 export const deleteTodoThunk=createAsyncThunk("/deletetodo", async({formData,dispatch},{rejectWithValue})=>{
     try {
        const response= await api.deleteTodoApi(formData);
