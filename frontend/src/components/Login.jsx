@@ -14,6 +14,7 @@ const LoginForm = () => {
 
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  //handles the input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -22,6 +23,7 @@ const LoginForm = () => {
     });
   };
 
+  //handles from submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if(formData.email==="" || formData.password==="")
