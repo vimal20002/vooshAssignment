@@ -20,7 +20,9 @@ app.use(helmet());
 
 // Use xss-clean to sanitize user input
 app.use(xssClean());
-
+app.get('/',(req,res)=>{
+    res.send("I am Working");
+})
 app.use('/auth', authRoutes);
 app.use('/todos', authMiddleWare, todosRoutes);
 
