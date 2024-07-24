@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
     const todo = new Todo({...req.body, userId:req.user.userId, time, column:"todo"});
     try {
         const newTodo = await todo.save();
-        res.status(201).json({message:"Added"});
+        res.status(201).json(newTodo);
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
